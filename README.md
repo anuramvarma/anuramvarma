@@ -5,7 +5,7 @@
 
 - 🔭 I’m currently Learning on **Power BI tools**
 
-- 🌱 I’m currently learning **Java,Python,C++ and SQl**
+- 🌱 I’m currently learning **Java,Python,C++ and SQl.**
 
 - 📫 How to reach me **anuramvarmamudunuri@gmail.com**
 
