@@ -7,7 +7,7 @@
 
 - 🌱 I’m currently learning **Java,Python,C++ and SQl**
 
-- 📫 How to reach me **anuramvarma811@gmail.com**
+- 📫 How to reach me **anuramvarmamudunuri@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
