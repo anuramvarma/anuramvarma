@@ -1,4 +1,4 @@
-![logo](https://github.com/anuramvarma/anuramvarma/blob/main/Background.png)
+![logo](https://github.com/anuramvarma/anuramvarma/blob/main/AbstractTechnologyProfileLinkedInBanner(1).png)
 <h1 align="center">Hi 👋, I'm Anuram Prakash Varma</h1>
 <h3 align="center">A passionate Web developer with UI/UX from India</h3>
 
