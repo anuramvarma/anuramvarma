@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+
 void main() => runApp(const ThemedApp());
+
 class ThemedApp extends StatefulWidget {
   const ThemedApp({super.key});
   @override
   State<ThemedApp> createState() => _ThemedAppState();
 }
+
 class _ThemedAppState extends State<ThemedApp> {
   int _i = 0;
   final _themes = [
@@ -13,9 +16,7 @@ class _ThemedAppState extends State<ThemedApp> {
       "t": ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.deepPurple,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.black),
-        ),
+        textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.black)),
       ),
     },
     {
@@ -23,9 +24,7 @@ class _ThemedAppState extends State<ThemedApp> {
       "t": ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.grey,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.white),
-        ),
+        textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.white)),
       ),
     },
     {
@@ -33,9 +32,7 @@ class _ThemedAppState extends State<ThemedApp> {
       "t": ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.blue.shade50,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.blue),
-        ),
+        textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.blue)),
       ),
     },
     {
@@ -43,9 +40,7 @@ class _ThemedAppState extends State<ThemedApp> {
       "t": ThemeData(
         primarySwatch: Colors.green,
         scaffoldBackgroundColor: Colors.green.shade50,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.green),
-        ),
+        textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.green)),
       ),
     },
   ];
@@ -61,10 +56,7 @@ class _ThemedAppState extends State<ThemedApp> {
     return MaterialApp(
       theme: theme,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Theme Switcher'),
-          centerTitle: true,
-        ),
+        appBar: AppBar(title: const Text('Theme Switcher'), centerTitle: true),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -78,10 +70,7 @@ class _ThemedAppState extends State<ThemedApp> {
                 ),
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _next,
-                child: Text('Change to $next'),
-              ),
+              ElevatedButton(onPressed: _next, child: Text('Change to $next')),
               const SizedBox(height: 10),
               Text(
                 'Current Theme: $current',
