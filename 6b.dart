@@ -6,12 +6,11 @@ class ThemedApp extends StatefulWidget {
   State<ThemedApp> createState() => _ThemedAppState();
 }
 class _ThemedAppState extends State<ThemedApp> {
-  int _index = 0;
-
+  int _i = 0;
   final _themes = [
     {
-      "name": "Light",
-      "theme": ThemeData(
+      "n": "Light",
+      "t": ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.deepPurple,
         textTheme: const TextTheme(
@@ -20,8 +19,8 @@ class _ThemedAppState extends State<ThemedApp> {
       ),
     },
     {
-      "name": "Dark",
-      "theme": ThemeData(
+      "n": "Dark",
+      "t": ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.grey,
         textTheme: const TextTheme(
@@ -30,20 +29,20 @@ class _ThemedAppState extends State<ThemedApp> {
       ),
     },
     {
-      "name": "Blue",
-      "theme": ThemeData(
+      "n": "Blue",
+      "t": ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.blueAccent.shade100,
+        scaffoldBackgroundColor: Colors.blue.shade50,
         textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.blue),
         ),
       ),
     },
     {
-      "name": "Green",
-      "theme": ThemeData(
+      "n": "Green",
+      "t": ThemeData(
         primarySwatch: Colors.green,
-        scaffoldBackgroundColor: Colors.greenAccent.shade100,
+        scaffoldBackgroundColor: Colors.green.shade50,
         textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.green),
         ),
@@ -51,19 +50,21 @@ class _ThemedAppState extends State<ThemedApp> {
     },
   ];
 
-  void _nextTheme() => setState(() => _index = (_index + 1) % _themes.length);
+  void _next() => setState(() => _i = (_i + 1) % _themes.length);
 
   @override
   Widget build(BuildContext context) {
-    final current = _themes[_index];
-    final theme = current["theme"] as ThemeData;
-    final name = current["name"];
-
+    final c = _themes[_i];
+    final theme = c["t"] as ThemeData;
+    final current = c["n"];
+    final next = _themes[(_i + 1) % _themes.length]["n"];
     return MaterialApp(
-      title: 'Theme Demo',
       theme: theme,
       home: Scaffold(
-        appBar: AppBar(title: const Text('Theme Switcher'), centerTitle: true),
+        appBar: AppBar(
+          title: const Text('Theme Switcher'),
+          centerTitle: true,
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -78,12 +79,12 @@ class _ThemedAppState extends State<ThemedApp> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: _nextTheme,
-                child: Text('Change Theme ($name)'),
+                onPressed: _next,
+                child: Text('Change to $next'),
               ),
               const SizedBox(height: 10),
               Text(
-                'Current Theme: $name',
+                'Current Theme: $current',
                 style: TextStyle(color: theme.textTheme.bodyMedium?.color),
               ),
             ],
